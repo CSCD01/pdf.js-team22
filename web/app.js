@@ -1244,13 +1244,15 @@ const PDFViewerApplication = {
           return true;
         });
 
-        // Hack to support auto printing.
-        for (const js of javaScript) {
-          if (js && AutoPrintRegExp.test(js)) {
-            setTimeout(function() {
-              window.print();
-            });
-            return;
+        if (!AppOptions.get("disableAutoPrint")) {
+          // Hack to support auto printing.
+          for (const js of javaScript) {
+            if (js && AutoPrintRegExp.test(js)) {
+              setTimeout(function() {
+                window.print();
+              });
+              return;
+            }
           }
         }
       });

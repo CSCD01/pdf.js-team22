@@ -48,6 +48,11 @@ const defaultOptions = {
     value: false,
     kind: OptionKind.VIEWER,
   },
+  disableAutoPrint: {
+    /** @type {boolean} */
+    value: false,
+    kind: OptionKind.VIEWER + OptionKind.PREFERENCE,
+  },
   disablePageLabels: {
     /** @type {boolean} */
     value: false,
